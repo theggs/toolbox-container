@@ -4,3 +4,4 @@ RUN echo "https://mirrors.aliyun.com/alpine/v3.6/community/" >> /etc/apk/reposit
 RUN ["apk","add","curl"]
 RUN ["apk","add","bash"]
 RUN ["apk", "add", "busybox-extras"]
+RUN ["apk", "add", "netcat-openbsd"]
