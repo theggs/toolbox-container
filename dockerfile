@@ -12,6 +12,6 @@ RUN ["apk", "add", "netcat-openbsd"]
 # add etcdctl
 RUN curl -sSL https://github.com/coreos/etcd/releases/download/v3.5.20/etcd-v3.5.20-linux-amd64.tar.gz \
     | tar -vxz -C /usr/local/bin --strip=1 etcd-v3.5.20-linux-amd64/etcd etcd-v3.5.20-linux-amd64/etcdctl \
-    && chown root:root /usr/local/bin/etcd /usr/local/bin/etcdctl \
+    && chown root:root /usr/local/bin/etcd /usr/local/bin/etcdctl
 
 RUN rm -rf /var/cache/apk/*
