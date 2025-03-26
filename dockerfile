@@ -8,3 +8,10 @@ RUN ["apk","add","bash"]
 RUN ["apk", "add", "busybox-extras"]
 RUN ["apk", "add", "netcat-openbsd"]
 
+# add etcdctl
+RUN apk-install curl && \
+    curl -LOks https://github.com/coreos/etcd/releases/download/v${VERSION}/etcd-v3.5.20-linux-amd64.tar.gz && \
+    tar zxvf etcd-v${VERSION}-linux-amd64.tar.gz && \
+    cp etcd-v${VERSION}-linux-amd64/etcdctl /usr/bin/etcdctl && \
+    rm -rf etcd-v* && \
+    chmod +x /usr/bin/etcdctl
